@@ -22,9 +22,9 @@ def batch_commit_and_push(files):
             print(f"❌ Error in batch {batch_number}, skipping...")
 
 def main():
-    all_files = sorted(f for f in os.listdir(".") if f.endswith(EXTENSION) and os.path.isfile(f))
+    all_files = sorted(f for f in os.listdir(".") if (f.endswith(EXTENSION) or f.endswith(".mov")) and os.path.isfile(f))
     print(f"📁 Found {len(all_files)} .mp4 files")
-    
+
     if not all_files:
         print("⚠️  No matching files found.")
         return
