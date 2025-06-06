@@ -8,7 +8,7 @@ OUTPUT_FILE = "file_list.json"
 
 def main():
     if EXTENSION:
-        files = sorted(f for f in os.listdir(".") if (f.endswith(EXTENSION) or f.endswith(".MOV")) and os.path.isfile(f))
+        files = sorted(f for f in os.listdir(".") if (f.lower().endswith(EXTENSION) or f.lower().endswith(".MOV")) and os.path.isfile(f))
     else:
         files = sorted(f for f in os.listdir(".") if os.path.isfile(f))
 
